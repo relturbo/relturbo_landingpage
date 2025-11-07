@@ -25,19 +25,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Main Slideshow
     let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-        let i;
+    let slideInterval;
+    
+    function showSlides(n) {
         let slides = document.getElementsByClassName("mySlides");
-        for (i = 0; i < slides.length; i++) {
+        
+        if (n >= slides.length) { slideIndex = 0; }
+        if (n < 0) { slideIndex = slides.length - 1; }
+        
+        // Hide all slides with fade-out animation
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
             slides[i].style.display = "none";
         }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex-1].style.display = "block";
-        setTimeout(showSlides, 4000); // Change image every 4 seconds
+        
+        // Show current slide with fade-in animation
+        slides[slideIndex].style.display = "block";
+        slides[slideIndex].classList.add("active");
     }
+    
+    function nextSlide() {
+        slideIndex++;
+        showSlides(slideIndex);
+    }
+    
+    function autoSlideshow() {
+        nextSlide();
+        slideInterval = setTimeout(autoSlideshow, 4000); // Change image every 4 seconds
+    }
+    
+    // Start automatic slideshow
+    showSlides(slideIndex);
+    slideInterval = setTimeout(autoSlideshow, 4000);
+    
+    // Manual navigation functions (called by HTML buttons)
+    window.changeSlide = function(n) {
+        clearTimeout(slideInterval); // Stop auto slideshow temporarily
+        slideIndex += n;
+        showSlides(slideIndex);
+        slideInterval = setTimeout(autoSlideshow, 4000); // Restart auto slideshow
+    };
 
     // Testimonial Slideshow
     let testimonialIndex = 0;

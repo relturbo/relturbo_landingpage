@@ -3,32 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RELTurbo - Precision Turbo Power</title>
+    <title>RELTurbo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="placeholder_logo.png" alt="RELTurbo Logo">
-            <h1>RELTurbo</h1>
+            <img src="logot.png" alt="RELTurbo Logo">
+            <!-- <h1>RELTurbo</h1> -->
         </div>
         <div class="tagline">
-            <p>Precision Turbo Power, Engineered to Perform.</p>
+            <p>RELTurbo : Precision Turbo Power, Engineered to Perform.</p>
         </div>
         <div class="theme-switcher">
             <span id="theme-toggle">☀️</span>
         </div>
     </header>
     <nav class="subheader">
-        <ul>
+        <div class="mobile-menu-toggle">
+            <span>☰</span>
+        </div>
+        <ul class="nav-menu">
             <li><a href="#">Shop</a></li>
-            <li>
-                <select name="category" id="category">
-                    <option value="">Category</option>
-                    <option value="turbochargers">Turbochargers</option>
-                    <option value="intercoolers">Intercoolers</option>
-                    <option value="exhaust">Exhaust Systems</option>
-                </select>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Category</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Turbochargers</a></li>
+                    <li><a href="#">Intercoolers</a></li>
+                    <li><a href="#">Exhaust Systems</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Brands</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Garrett Motion</a></li>
+                    <li><a href="#">BorgWarner</a></li>
+                    <li><a href="#">Precision Turbo</a></li>
+                </ul>
             </li>
             <li><a href="#">Turbo Repair</a></li>
             <li><a href="#">Contact</a></li>
@@ -40,29 +51,29 @@
     <main>
         <section class="slideshow-container">
             <div class="mySlides fade">
-                <img src="https://picsum.photos/1600/450?random=1" style="width:100%">
+                <img src="Assets/turbocores.png" style="width:100%" alt="Turbocores">
                 <div class="shop-now-btn"><a href="#">Shop Now</a></div>
             </div>
             <div class="mySlides fade">
-                <img src="https://picsum.photos/1600/450?random=2" style="width:100%">
+                <img src="Assets/ACTUATORS.png" style="width:100%" alt="Actuators">
                 <div class="shop-now-btn"><a href="#">Shop Now</a></div>
             </div>
             <div class="mySlides fade">
-                <img src="https://picsum.photos/1600/450?random=3" style="width:100%">
+                <img src="Assets/COMPRESSOR.png" style="width:100%" alt="Compressor">
                 <div class="shop-now-btn"><a href="#">Shop Now</a></div>
             </div>
             <div class="mySlides fade">
-                <img src="https://picsum.photos/1600/450?random=4" style="width:100%">
+                <img src="Assets/SHAFT.png" style="width:100%" alt="Shaft">
                 <div class="shop-now-btn"><a href="#">Shop Now</a></div>
             </div>
             <div class="mySlides fade">
-                <img src="https://picsum.photos/1600/450?random=5" style="width:100%">
+                <img src="Assets/Repairkit.png" style="width:100%" alt="Repair Kit">
                 <div class="shop-now-btn"><a href="#">Shop Now</a></div>
             </div>
-            <div class="mySlides fade">
-                <img src="https://picsum.photos/1600/450?random=6" style="width:100%">
-                <div class="shop-now-btn"><a href="#">Shop Now</a></div>
-            </div>
+            
+            <!-- Navigation arrows -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
         </section>
 
         <section class="product-section">
