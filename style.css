@@ -1,0 +1,319 @@
+@font-face {
+    font-family: 'Eurostile';
+    src: url('eurostile-2/eurostile.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EuroStyle';
+    src: url('eurostile-2/EuroStyle Normal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --light-bg: #fdf5e6; /* Yellowish Background */
+    --light-text: #3a2d27; /* Brown text */
+    --light-accent: #c0392b; /* Red accent */
+
+    --dark-bg: #2E2E2E; /* Matte gunmetal */
+    --dark-text: #8A8D91; /* Surface finish / anodized aluminum */
+    --dark-accent: #f1c40f; /* Yellow accent */
+    --dark-accent2: #e74c3c; /* Red accent */
+    --dark-secondary-bg: #3A3F44; /* CAD-software sidebar gray */
+    --dark-tertiary-bg: #4B4F54; /* Mechanical workshop steel */
+    --dark-quaternary: #6C6F73; /* Machine blueprint gray */
+}
+
+body {
+    font-family: 'Eurostile', 'EuroStyle', 'Arial', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+}
+
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--light-text);
+}
+
+body.dark-mode header {
+    border-bottom: 2px solid var(--dark-quaternary);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 1rem;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.tagline p {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.theme-switcher {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.subheader {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #ccc;
+}
+
+body.dark-mode .subheader {
+    border-bottom: 1px solid var(--dark-tertiary-bg);
+}
+
+.subheader ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.subheader a, .subheader select {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+body.light-mode .subheader a, body.light-mode .subheader select {
+    color: var(--light-text);
+}
+
+body.dark-mode .subheader a, body.dark-mode .subheader select {
+    color: var(--dark-text);
+}
+
+.subheader select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 1rem;
+}
+
+
+/* Slideshow */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    vertical-align: middle;
+}
+
+.shop-now-btn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+.shop-now-btn a {
+    padding: 1rem 2rem;
+    background-color: var(--light-accent);
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 2px solid var(--light-accent);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .shop-now-btn a {
+    background-color: var(--dark-accent);
+    color: var(--dark-bg);
+    border-color: var(--dark-accent);
+}
+
+.shop-now-btn a:hover {
+    background-color: transparent;
+    color: var(--light-accent);
+}
+
+body.dark-mode .shop-now-btn a:hover {
+    color: var(--dark-accent);
+}
+
+
+/* Product Section */
+.product-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.product-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.product-item {
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+body.dark-mode .product-item {
+    border: 1px solid var(--dark-tertiary-bg);
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.product-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-item p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.product-item a {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--light-text);
+    color: var(--light-bg);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .product-item a {
+    background-color: var(--dark-text);
+    color: var(--dark-bg);
+}
+
+.product-item a:hover {
+    background-color: var(--light-accent);
+}
+
+body.dark-mode .product-item a:hover {
+    background-color: var(--dark-accent2);
+}
+
+/* Testimonial Slideshow */
+.testimonial-slideshow {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.testimonial-slideshow h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.testimonial {
+    display: none;
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+    border-left: 5px solid var(--light-accent);
+    background-color: #f9f9f9;
+}
+
+body.dark-mode .testimonial {
+    border-left: 5px solid var(--dark-accent);
+    background-color: var(--dark-secondary-bg);
+}
+
+.testimonial p {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial span {
+    font-weight: bold;
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.footer-content a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tagline {
+        margin-top: 1rem;
+    }
+
+    .subheader ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
